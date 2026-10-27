@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-cleaner"
+version = "0.1.0"
+description = "本地 AI 数据分析助手：清洗、质量评分、自动探索与多轮规则问答"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Repository = "https://github.com/wangwangluobin-stack/test-repo"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["agent", "analyzer", "clean", "loader", "main", "make_sample", "qa", "quality", "report"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-config --strict-markers"
